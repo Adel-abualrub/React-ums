@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import useFetchData from "../hooks/useFetchData";
+import User from "../components/user/User";
 
 export default function Users() {
 const {data,isLoder,isError}=useFetchData(`${import.meta.env.VITE_BURL}/users`); 
@@ -24,13 +25,7 @@ return (
   <div className="container">
     <div className="row g-3">
       {data.users.map((user) => (
-        <div className="col-md-4">
-          <div className="card">
-            <img src={user.imageUrl} alt={user.name} className="card-img-top" />
-           
-          </div>
-          <div>{user.name}</div>
-        </div>
+       <User user={user}/>
       ))}
     </div>
   </div>
