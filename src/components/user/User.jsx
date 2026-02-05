@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function User({user}) {
   return (
@@ -9,6 +10,7 @@ export default function User({user}) {
            
           </div>
           <div>{user.name}</div>
+        <Link to={`/user/${user.id}`} className='btn btn-primary'>Details</Link>
         </div>
     </div>
   )

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import useFetchData from "../hooks/useFetchData";
 import User from "../components/user/User";
+import { Link } from "react-router-dom";
 
 export default function Users() {
 const {data,isLoder,isError}=useFetchData(`${import.meta.env.VITE_BURL}/users`); 
@@ -29,6 +30,7 @@ return (
       ))}
     </div>
   </div>
+ 
 </section>
   );
 }
