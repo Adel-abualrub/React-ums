@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function User({user}) {
+export default function User({user,onDelete}) {
   return (
     <div>
        <div className="col-md-4">
@@ -11,6 +11,7 @@ export default function User({user}) {
           </div>
           <div>{user.name}</div>
         <Link to={`/user/${user.id}`} className='btn btn-primary'>Details</Link>
+        <button className='btn btn-danger' onClick={()=>{onDelete(user.id)}}>Delete user</button>
         </div>
     </div>
   )

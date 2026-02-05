@@ -6,6 +6,18 @@ import { Link } from "react-router-dom";
 
 export default function Users() {
 const {data,isLoder,isError}=useFetchData(`${import.meta.env.VITE_BURL}/users`); 
+
+const handleDelete = async (id) => {
+  try {
+    
+    await axios.delete(`${import.meta.env.VITE_BURL}/users/${id}`);
+    console.log("User deleted successfully");
+  
+  } catch (error) {
+    console.error("There was an error deleting the user:", error);
+  }
+};
+
 console.log(data);
 if (isLoder) {
     return (
@@ -26,7 +38,7 @@ return (
   <div className="container">
     <div className="row g-3">
       {data.users.map((user) => (
-       <User user={user}/>
+       <User user={user} onDelete={handleDelete}/>
       ))}
     </div>
   </div>
