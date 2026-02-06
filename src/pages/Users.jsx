@@ -12,7 +12,7 @@ const handleDelete = async (id) => {
     
     await axios.delete(`${import.meta.env.VITE_BURL}/users/${id}`);
     console.log("User deleted successfully");
-  
+   window.location.reload();
   } catch (error) {
     console.error("There was an error deleting the user:", error);
   }

@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Users from "./pages/users";
 import Mainlayout from "./Layouts/MainLayout/Mainlayout";
 import UserDetails from "./pages/UserDetails";
+import CreateUser from "./pages/CreateUser";
 
 const router=createBrowserRouter([{
 
@@ -16,6 +17,10 @@ const router=createBrowserRouter([{
 {
     path:"/user/:Id",
     element: <UserDetails/>
+}
+,{
+    path:"CreateUser",
+    element:<CreateUser/>
 }
 
 
